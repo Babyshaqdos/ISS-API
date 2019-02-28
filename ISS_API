@@ -1,0 +1,31 @@
+import requests
+
+
+class ISSData:
+
+    def __init__(self, key):
+        self.url = "http://api.open-notify.org"
+        self.api_key = key
+
+    def _call_api(self):
+        call = self.url + self.api_key
+        r = requests.get(call)
+        return r.json()
+
+    def location_of_iss(self):
+        call = self._call_api() + '/iss-now.json'
+        response = requests.get(call)
+        return response.json()
+
+    def people_on_iss(self):
+        call = self._call_api() + '/astros.json'
+        result = requests.get(call)
+        return result.json()
+
+    def
+
+
+
+
+
+
